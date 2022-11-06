@@ -99,6 +99,7 @@ Future<T?> showRelativeDialog<T>({
   /// Pass through fields from [showDialog].
   String barrierLabel = 'dismiss',
   Color? barrierColor = Colors.black54,
+  bool barrierDismissible = true,
   bool useSafeArea = true,
   bool useRootNavigator = true,
   RouteSettings? routeSettings,
@@ -113,7 +114,7 @@ Future<T?> showRelativeDialog<T>({
 
   return showDialog<T>(
     context: context,
-    barrierDismissible: true,
+    barrierDismissible: barrierDismissible,
     barrierLabel: barrierLabel,
     barrierColor: barrierColor,
     useRootNavigator: useRootNavigator,
