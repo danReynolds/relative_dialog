@@ -9,4 +9,29 @@ A flutter package for displaying a dialog above the current contents of the app 
 # Example
 
 ```dart
+Builder(
+  builder: (context) {
+    return ElevatedButton(
+      child: Text('Show relative dialog'),
+      onPressed: () {
+        showRelativeDialog(
+          // The context of the widget to show the dialog relative to.
+          context: context,
+          builder: (context) {
+            return Text(
+              'Done!',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          }
+        );
+      },
+    );
+  }
+)
 ```
+
+# Demo
+
+[Full demo](https://github.com/danReynolds/relative_dialog/blob/master/example/lib/main.dart).
