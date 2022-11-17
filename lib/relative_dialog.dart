@@ -115,6 +115,7 @@ Widget _transitionBuilder({
   required BuildContext transitionContext,
   required RouteTransitionsBuilder? transitionBuilder,
   required Alignment alignment,
+  required Offset offset,
   required Widget child,
   required Animation<double> a1,
   required Animation<double> a2,
@@ -132,8 +133,8 @@ Widget _transitionBuilder({
   return Stack(
     children: [
       Positioned(
-        top: positionOffset.dy,
-        left: positionOffset.dx,
+        top: positionOffset.dy + offset.dy,
+        left: positionOffset.dx + offset.dx,
         child: FractionalTranslation(
           translation: translationOffset,
           child: transitionBuilder.call(transitionContext, a1, a2, child),
@@ -183,6 +184,7 @@ Future<T?> showRelativeDialog<T>({
       a2: a2,
       child: child,
       alignment: alignment,
+      offset: offset,
     ),
     transitionDuration: transitionDuration,
     pageBuilder: (_, animation1, animation2) => builder(context),

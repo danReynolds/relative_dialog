@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Fix offset bug.
+
 ## 0.1.0
 
 * Support custom transitions.

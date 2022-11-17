@@ -1,6 +1,6 @@
 name: relative_dialog
 description: Displays a dialog above the current contents of the app relative to the widget associated with the given BuildContext.
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/danReynolds/relative_dialog
 
 environment:
