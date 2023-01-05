@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 /// Calculates the positional offset that the dialog should take relative to the [BuildContext]
 /// associated with the widget that opened it.
-/// For example, if the specified alignment is [Alignment.bottomRight], then since the coordinate system
-/// of the `renderBoxOffset` is the top-left of the opener widget, the dialog should be positioned
-/// at the bottom right of that box achieved with a positional offset of:
+/// For example, if the specified alignment is [Alignment.bottomRight], then since the position
+/// of the dialog starts at the top-left relative to the widget that opened it, the dialog can be positioned
+/// at the bottom right of that box using a positional offset of:
 /// x-axis: renderBoxOffset.dx + renderBoxWidth
 /// y-axis: renderBoxOffset.dy + renderBoxHeight
 /// The translational offset function below is then used to translate the dialog relative to its own width,
 /// since its coordinates also start top-left and to achieve a [Alignment.bottomRight] alignment, it needs
-/// to be translated in the x-axis by its own width to align its right bound with the right bound of the opener widget.
+/// to be translated in the x-axis by its own width to align its right bound with the right bound of the widget that opened it.
 Offset _calculatePositionOffset({
   required BuildContext context,
   required Alignment alignment,
@@ -69,7 +69,7 @@ Offset _calculatePositionOffset({
 /// [BuildContext] of the widget that opened it.
 /// For example, if the specified alignment is [Alignment.bottomRight], then since positional offset calculation
 /// positions the dialog at the bottom right of the widget that opened it, the translational offset will need to apply
-/// an x-axis translation of Offset(-1.0, 0) since the dialog's coordinates start top-left and to have it's right bound
+/// an x-axis translation of Offset(-1.0, 0) since the dialog's position starts top-left and to have it's right bound
 /// end at the right bound of the widget that opened it, it needs a negative translation equal to its own width.
 Offset _calculateTranslationOffset({
   required Alignment alignment,
