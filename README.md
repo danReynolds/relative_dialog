@@ -1,6 +1,6 @@
 # Relative Dialog
 
-A Flutter package for displaying a dialog using the [showDialog](https://api.flutter.dev/flutter/material/showDialog.html) API relative to the widget associated with the given BuildContext.
+A Flutter package for displaying a dialog relative to another widget.
 
 ![Basic demo 2 gif](./demo2.gif).
 
@@ -14,7 +14,8 @@ The `RelativeAnchor` widget can be used to wrap the widget that the dialog shoul
 Builder(
   builder: (context) {
     return RelativeAnchor(
-      builder: (context, {
+      builder: (
+        context, {
         required show,
       }) {
         return ElevatedButton(

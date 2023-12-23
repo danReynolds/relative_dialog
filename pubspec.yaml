@@ -1,5 +1,5 @@
 name: relative_dialog
-description: Displays a dialog above the current contents of the app relative to the widget associated with the given BuildContext.
+description: A Flutter package for displaying a dialog relative to another widget.
 version: 0.2.0
 homepage: https://github.com/danReynolds/relative_dialog
 
