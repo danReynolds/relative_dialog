@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Add anchor widget.
+
 ## 0.1.1
 
 * Fix offset bug.

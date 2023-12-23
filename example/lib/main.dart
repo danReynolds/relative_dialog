@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:relative_dialog/relative_dialog.dart';
+import 'package:relative_dialog/relative_anchor.dart';
 
 void main() {
   runApp(const MyApp());
@@ -68,13 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Builder(
-          builder: (context) {
+        child: RelativeAnchor(
+          builder: (
+            context, {
+            required show,
+          }) {
             return ElevatedButton(
               onPressed: () async {
                 if (_alignments.isEmpty) {
-                  return showRelativeDialog(
-                    context: context,
+                  return show(
                     barrierColor: Colors.transparent,
                     builder: (context) {
                       return Container(
@@ -95,8 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 }
 
                 final alignment = _alignments.first;
-                await showRelativeDialog(
-                  context: context,
+                await show(
                   alignment: alignment,
                   barrierColor: Colors.transparent,
                   builder: (context) {
@@ -121,7 +122,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               child: Text(
-                  _alignments.isEmpty ? 'Done' : 'Next: ${_alignments.first}'),
+                _alignments.isEmpty ? 'Done' : 'Next: ${_alignments.first}',
+              ),
             );
           },
         ),
