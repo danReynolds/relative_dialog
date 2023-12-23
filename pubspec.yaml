@@ -1,6 +1,6 @@
 name: relative_dialog
 description: A Flutter package for displaying a dialog relative to another widget.
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/danReynolds/relative_dialog
 
 environment:
